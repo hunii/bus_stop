@@ -11,3 +11,5 @@ SCHEDULER.every '2s' do
   send_event('karma', { current: current_karma, last: last_karma })
   send_event('synergy',   { value: rand(100) })
 end
+
+#'http://localhost:3030/api/youtube/show?url=http%3A//www.youtube.com/watch%3Fv%3D1iWiCen1qlE'

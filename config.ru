@@ -11,6 +11,13 @@ configure do
   end
 end
 
+get '/api/:widget/:command' do
+    widget = params[:widget]
+    send_event(widget, params)
+
+    200
+end
+
 map Sinatra::Application.assets_prefix do
   run Sinatra::Application.sprockets
 end
