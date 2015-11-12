@@ -17,7 +17,3 @@ to make the videos go, just pass it on the url via a curl command or similar i.e
 
 Full-Screen:
 bus-stop.herokuapp.com/api/youtube/show?url=https://www.youtube.com/watch?v=EXc1-WheCd0&index=1&list=PLiqUtLfTLPR9ya-K1gTzscM7acSq1Smag
-
-
-
-Check out http://shopify.github.com/dashing for more information.
