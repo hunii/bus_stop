@@ -14,7 +14,7 @@ search_term = URI::encode('from:MYOB')
 
 SCHEDULER.every '5m', :first_in => 0 do |job|
   begin
-    tweets = twitter.search("#{search_term}")
+    tweets = twitter.search("#{search_tgiterm}")
 
     if tweets
       tweets = tweets.map do |tweet|
