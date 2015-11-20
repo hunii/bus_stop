@@ -1,10 +1,10 @@
 require 'net/http'
 
 
-   source = 'http://localhost:3000/qwerty/give_json.json'
-   resp = Net::HTTP.get_response(URI.parse(source))
-   data = resp.body
-   result = JSON.parse(data)
+   # source = 'http://localhost:3000/qwerty/give_json.json'
+   # resp = Net::HTTP.get_response(URI.parse(source))
+   # data = resp.body
+   # result = JSON.parse(data)
 
 
 
