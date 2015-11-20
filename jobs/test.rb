@@ -1,10 +1,10 @@
 require 'net/http'
 
 
-   source = 'http://a0.awsstatic.com/pricing/1/ec2/sles-od.min.js'
-   resp = Net::HTTP.get_response(URI.parse(source))
-   data = resp.body
-   result = JSON.parse(data)
+   # source = 'http://a0.awsstatic.com/pricing/1/ec2/sles-od.min.js'
+   # resp = Net::HTTP.get_response(URI.parse(source))
+   # data = resp.body
+   # result = JSON.parse(data)
 
 
 
