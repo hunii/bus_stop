@@ -1,10 +1,10 @@
 require 'net/http'
 
 
-   # source = 'http://localhost:3000/qwerty/give_json.json'
-   # resp = Net::HTTP.get_response(URI.parse(source))
-   # data = resp.body
-   # result = JSON.parse(data)
+   source = 'https://aws.amazon.com/ec2/pricing/a0.awsstatic.com/pricing/1/ec2/linux-od.min.js'
+   resp = Net::HTTP.get_response(URI.parse(source))
+   data = resp.body
+   result = JSON.parse(data)
 
 
 
