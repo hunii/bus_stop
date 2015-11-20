@@ -1,16 +1,19 @@
-# require 'twitter'
+require 'net/http'
 
 
-# #### Get your twitter keys & secrets:
-# #### https://dev.twitter.com/docs/auth/tokens-devtwittercom
-# twitter = Twitter::REST::Client.new do |config|
-#   config.consumer_key = 'hnS5WXiGcemc8m0ihD0q8SwUn'
-#   config.consumer_secret = 'Afw4F6Pb14dfLNyuSywL8r4Z7GNPQoKyiVU585wJBWkxMOOfzO'
-#   config.access_token = '4273108759-gXDejwNP601V9mb7TeDFC7rXsOacxJmOzeHCTNO'
-#   config.access_token_secret = 'aw7206LKiCgsi4Xwyq8OrUI3h1zRpTM5WtgOuV3wKxbHn'
-# end
+   source = 'http://localhost:3000/qwerty/give_json.json'
+   resp = Net::HTTP.get_response(URI.parse(source))
+   data = resp.body
+   result = JSON.parse(data)
 
-# search_term = URI::encode('from:MYOB')
+
+
+SCHEDULER.every '3s', :first_in => 0 do |job|
+  
+      send_event('test1', comments: "2")
+    
+end
+
 
 # SCHEDULER.every '5m', :first_in => 0 do |job|
 #   begin
