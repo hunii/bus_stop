@@ -1,7 +1,7 @@
 require 'net/http'
 
 
-   source = 'https://aws.amazon.com/ec2/pricing/a0.awsstatic.com/pricing/1/ec2/linux-od.min.js'
+   source = 'http://a0.awsstatic.com/pricing/1/ec2/sles-od.min.js'
    resp = Net::HTTP.get_response(URI.parse(source))
    data = resp.body
    result = JSON.parse(data)
