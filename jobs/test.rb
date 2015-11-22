@@ -1,31 +1,36 @@
 require 'net/http'
+require 'json'
 
+YOUTUBE_URI = URI.parse("http://www.youtube.com/")
 
-   # source = 'http://a0.awsstatic.com/pricing/1/ec2/sles-od.min.js'
-   # resp = Net::HTTP.get_response(URI.parse(source))
-   # data = resp.body
-   # result = JSON.parse(data)
-
-
-
-SCHEDULER.every '3s', :first_in => 0 do |job|
-  
-      send_event('test1', comments: "2")
-    
+def youtube_json(page)
+  uri = YOUTUBE_URI.dup
+  uri.path = '/api/photos'
+  uri.query = "page=#{page}"
+  response = Net::HTTP.get(uri)
+  JSON.parse(response)
 end
 
+def youtube(page)
+  json = youtube_json(page)
+  json.map do |video|
+    uri = YOUTUBE_URI.dup
+    uri.path = video["image"]["url"]
+    uri
+  end
+end
 
-# SCHEDULER.every '5m', :first_in => 0 do |job|
-#   begin
-#     tweets = twitter.search("#{search_term}")
+page = 1
 
-#     if tweets
-#       tweets = tweets.map do |tweet|
-#         { name: tweet.user.name, body: tweet.text, avatar: tweet.user.profile_image_url_https }
-#       end
-#       send_event('twitter_mentions', comments: tweets)
-#     end
-#   rescue Twitter::Error
-#     puts "\e[33mFor the twitter widget to work, you need to put in your twitter API keys in the jobs/twitter.rb file.\e[0m"
-#   end
-# end
+SCHEDULER.every '1m', :first_in => 0 do |job|
+  puts "PAGE #{page}"
+  videos = youtube(page)
+
+  if videos.empty?
+    page = 1
+    videos = youtube(page)
+  end
+
+  send_event("youtube", {page: page, youtube: videos})
+  page = page + 1
+end
