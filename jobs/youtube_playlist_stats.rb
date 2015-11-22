@@ -8,8 +8,8 @@ require 'json'
 
 # Config
 # ------
-youtube_api_key =  ENV['YOUTUBE_API_KEY'] || 'YOUR_KEY_HERE'
-youtube_playlist_id = ENV['YOUTUBE_PLAYLIST_ID'] || 'PLbssOJyyvHuWiBQAg9EFWH570timj2fxt'
+youtube_api_key =  ENV['AIzaSyAj-GY4t-B3zSFuL-GXvZAFjxPx1g5VmG8'] || 'YOUR_KEY_HERE'
+youtube_playlist_id = ENV['PLbssOJyyvHuWiBQAg9EFWH570timj2fxt'] || 'PLbssOJyyvHuWiBQAg9EFWH570timj2fxt'
 max_results = 50
 # order the list by the numbers
 ordered = true
