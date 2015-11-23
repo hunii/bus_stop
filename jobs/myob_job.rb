@@ -7,4 +7,4 @@ data = "[{\"firstName\":\"John\", \"lastName\":\"Doe\"},{\"firstName\":\"Anna\",
 
 jjson = JSON.parse(data)
 
-send_event('testtest',   comments: jjson["firstName"] )
+send_event('testtest',   comments: "jjson[firstName]" )
