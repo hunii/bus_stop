@@ -9,5 +9,6 @@ puts data
 
 jjson = JSON.parse(data)
 
-send_event('testtest',   comments: jjson )
+send_event('testtest',   comments: jjson['firstName'] )
+
 puts jjson
