@@ -3,9 +3,9 @@ require 'json'
 
 
 
-openafile = File.open("trytextfile.txt", "r+")
-readafile123 = openafile.read
-readafile = JSON.parse(readafile123)
+openafile = File.open("./trytextfile.txt", "r+")
+readafile = openafile.read
+
 
 config_file = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile.txt'
 config = File.open(config_file)
