@@ -2,7 +2,7 @@ require 'json'
 
 usingList = [{:label=>"Count", :value=>10}, { :label=>"Sort", :value=>30}]
 
-usingList1 = [{:body=>"Count"}]
+usingComment = [{:name=>"MYOB", :body=>"Using Comment work!!"}]
 
 
 data = [{firstName:"John", lastName:"Doe"},{firstName:"Anna", lastName:"Smith"},{firstName:"Peter",lastName: "Jones"}]
@@ -21,7 +21,7 @@ json_formatted_items = items.to_json
 SCHEDULER.every '1m', :first_in => 0 do |job|
 
   send_event('myob_list', {items: usingList })
-  send_event('testtest1', {comments: usingList1 })
+  send_event('testtest1', {comments: usingComment })
 
 
 end
