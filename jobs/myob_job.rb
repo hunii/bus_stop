@@ -22,5 +22,7 @@ data1 = "james"
 # 		:firstName =>
 # 	}
 
+SCHEDULER.every '5s', :first_in => 0 do
 
-send_event('testtest', { comments: "data1" })
+	send_event('testtest', { comments: "data1" })
+end
