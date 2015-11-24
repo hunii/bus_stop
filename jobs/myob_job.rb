@@ -2,7 +2,7 @@ require 'json'
 
 usingList = [{:label=>"Count", :value=>10}, { :label=>"Sort", :value=>30}]
 
-usingList1 = [{:quote=>"Count"}]
+usingList1 = [{:comment=>"Count"}]
 
 
 data = [{firstName:"John", lastName:"Doe"},{firstName:"Anna", lastName:"Smith"},{firstName:"Peter",lastName: "Jones"}]
