@@ -7,4 +7,20 @@ data = "[{\"firstName\":\"John\", \"lastName\":\"Doe\"},{\"firstName\":\"Anna\",
 
 jjson = JSON.parse(data)
 
-send_event('testtest', { comments: jjson[0]['firstName'] })
+
+
+
+#     if tweets
+#       tweets = tweets.map do |tweet|
+#         { name: tweet.user.name, body: tweet.text, avatar: tweet.user.profile_image_url_https }
+#       end
+#       send_event('twitter_mentions', comments: tweets)
+
+
+# jjson.map do |son|
+# 	son = {
+# 		:firstName =>
+# 	}
+
+
+send_event('testtest', { comments: data })
