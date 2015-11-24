@@ -7,7 +7,7 @@ data = "[{\"firstName\":\"John\", \"lastName\":\"Doe\"},{\"firstName\":\"Anna\",
 
 jjson = JSON.parse(data)
 
-
+data1 = "james"
 
 
 #     if tweets
@@ -23,4 +23,4 @@ jjson = JSON.parse(data)
 # 	}
 
 
-send_event('testtest', { comments: data })
+send_event('testtest', { texts: data1 })
