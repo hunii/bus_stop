@@ -10,9 +10,12 @@ json_formatted_items = items.to_json
 # => "[{\"label\":\"l1\",\"value\":\"v1\"},{\"label\":\"l2\",\"value\":\"v2\"},{\"label\":\"l3\",\"value\":\"v3\"}]"
 
 
+usingList = [{:label=>"Count", :value=>10}, { :label=>"Sort", :value=>30}]
+
+
 
 SCHEDULER.every '3s', :first_in => 0 do |job|
-  send_event('testtest', {items: json_formatted_items })
+  send_event('testtest', {items: usingList })
   send_event('testtest1', {items: datajson })
 end
 
