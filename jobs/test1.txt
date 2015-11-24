@@ -1,0 +1,28 @@
+{
+   "predictions" : [
+     {
+       "description" : "Napa, CA, United States",
+       "id" : "cf268f9fb9a1b46aed72d59ab85ed40f982763c6",
+       "matched_substrings" : [
+          {
+            "length" : 4,
+            "offset" : 0
+          }
+       ],
+     "reference" : "CjQvAAAAqZWNGzqtJf3awNuQNQdnZpl4dBVVXFPrPdz29r1jo1GMWYFuz3KRlK9HgdgszOThEhDeYz_vYgcOPJTaYehF11bUGhR8yH9zqMGV9kenZIo9OTBrSwftgg",
+     "terms" : [
+        {
+           "offset" : 0,
+           "value" : "Napa"
+        },
+        {
+           "offset" : 6,
+           "value" : "CA"
+        },
+        {
+           "offset" : 10,
+           "value" : "United States"
+        }
+     ],
+     "types" : [ "locality", "political", "geocode" ]
+  }

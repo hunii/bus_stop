@@ -1,13 +1,13 @@
 require 'json'
 
 
-data = "[{\"firstName\":\"John\", \"lastName\":\"Doe\"},{\"firstName\":\"Anna\", \"lastName\":\"Smith\"},{\"firstName\":\"Peter\",\"lastName\": \"Jones\"}
-\]"
+# data = "[{\"firstName\":\"John\", \"lastName\":\"Doe\"},{\"firstName\":\"Anna\", \"lastName\":\"Smith\"},{\"firstName\":\"Peter\",\"lastName\": \"Jones\"}
+# \]"
 
 
-jjson = JSON.parse(data)
+# jjson = JSON.parse(data)
 
-data1 = "james"
+# data1 = "james"
 
 
 #     if tweets
@@ -22,8 +22,13 @@ data1 = "james"
 # 		:firstName =>
 # 	}
 
+url = File.open("test1.txt", "r")
+contents = url.read
+puts contents
+
+
 SCHEDULER.every '5s', :first_in => 0 do
 
-	send_event('testtest',  {comments: jjson} )
-	send_event('testtest1',  comments: jjson )
+	send_event('testtest',  {comments: contents} )
+	send_event('testtest1',  comments: contents )
 end
