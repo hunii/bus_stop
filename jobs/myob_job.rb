@@ -23,4 +23,4 @@ data1 = "james"
 # 	}
 
 
-send_event('testtest', { comments: data1 })
+send_event('testtest', { comments: "data1" })
