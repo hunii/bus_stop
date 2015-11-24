@@ -6,9 +6,8 @@ require 'json'
 openafile = File.open("trytextfile.txt", "r+")
 readafile = openafile.read
 
-openafile1 = File.open("/trytextfile.txt", "r+")
-readafile1 = openafile1.read
 
+readafile1 = readfile.to_json
 
 
 SCHEDULER.every '1s', :first_in => 0 do |job|
