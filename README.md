@@ -17,3 +17,11 @@ to make the videos go, just pass it on the url via a curl command or similar i.e
 
 Full-Screen:
 bus-stop.herokuapp.com/api/youtube/show?url=https://www.youtube.com/watch?v=EXc1-WheCd0&index=1&list=PLiqUtLfTLPR9ya-K1gTzscM7acSq1Smag
+
+
+Note:
+List widget format
+
+usingList = [{:label=>"Count", :value=>10}, { :label=>"Sort", :value=>30}]
+ send_event('myob_list', {items: usingList })
+
