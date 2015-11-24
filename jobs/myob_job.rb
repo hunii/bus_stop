@@ -1,8 +1,7 @@
 require 'json'
 
 
-data = "[{\"firstName\":\"John\", \"lastName\":\"Doe\"},{\"firstName\":\"Anna\", \"lastName\":\"Smith\"},{\"firstName\":\"Peter\",\"lastName\": \"Jones\"}
-\]"
+data = [{"firstName":"John", "lastName":"Doe"},{"firstName":"Anna", "lastName":"Smith"},{"firstName":"Peter","lastName": "Jones"}]
 
 
 
@@ -12,17 +11,12 @@ json_formatted_items = items.to_json
 
 
 
-SCHEDULER.every '1m', :first_in => 0 do |job|
+SCHEDULER.every '3s', :first_in => 0 do |job|
   send_event('testtest', {items: json_formatted_items })
+  send_event('testtest1', {items: data })
 end
 
 
 
-SCHEDULER.every '3s', :first_in => 0 do
 
-
-  send_event('testtest4',  { items: rand(100) } )
-  send_event('testtest14',  { items: rand(100) } )
-
-end
 
