@@ -22,7 +22,7 @@ require 'json'
 # 		:firstName =>
 # 	}
 
-url = File.open("test1.txt", "r")
+url = File.open("/test1.txt", "r")
 contents = url.read
 puts contents
 
