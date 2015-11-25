@@ -33,12 +33,12 @@ usingComment = [{:name=>"MYOB", :body=>"Using Comment work!!"}]
 
 
 
-SCHEDULER.every '1m', :first_in => 0 do
+SCHEDULER.every '1m', :first_in => 0 do |job|
 
   send_event('myob_list', {items: usingList1 })
   send_event('testtest1', {comments: usingComment })
 
-	send_event('test1', {items: data })
+  send_event('test1', {items: data })
   send_event('test2', {items: configjson })
 
 
