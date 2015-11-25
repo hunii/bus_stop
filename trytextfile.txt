@@ -1,11 +1,11 @@
-[
+
    {:label=> "Alan Isaac",
    :value=> "10 years old"},
 
    {:label=> "James",
    :value=> "1 years old"},
 
-]
+
 
 
 
