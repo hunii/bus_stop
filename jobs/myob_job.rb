@@ -18,7 +18,7 @@ textstring2 = ["123234345", "00000"]
 
 
 
-data = [{:label=>textstring[0], :value=> textstring2[0]}]
+data = [{:label=>textstring[1], :value=> textstring2[1]}]
 
 
 
@@ -37,7 +37,7 @@ usingComment = [{:name=>"MYOB", :body=>"Using Comment work!!"}]
 
 
 
-SCHEDULER.every '10s', :first_in => 0 do |job|
+SCHEDULER.every '1m', :first_in => 0 do |job|
 
   send_event('myob_list', {items: usingList1 })
   send_event('testtest1', {comments: usingComment })
