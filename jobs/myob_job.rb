@@ -6,9 +6,10 @@ usingList1 = {:label=>"Developer", :value=>"30/10/2015"}, { :label=>"Tester", :v
 
 
 jasonfile ="{\"label\":\"Alastair Cooks\"}"
+
 parsedfile = JSON.parse(jasonfile)
 #example  {"label"=>"Alastair Cook"}
-
+parsss = {"label"=>"Alastair Cook"}
 
 config_file = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile.txt'
 
@@ -28,7 +29,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
   send_event('testtest1', {comments: usingComment })
 
 	send_event('test1', {items: configjson })
-  send_event('test2', {items: parsedfile })
+  send_event('test2', {items: parsss })
 
 
 end
