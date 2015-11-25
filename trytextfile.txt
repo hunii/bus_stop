@@ -1,5 +1,4 @@
 {
-   "label": "Alan Isaac",
-   "value": "David Richardson"
+   "label": "Alan Isaac"
 	
 }
