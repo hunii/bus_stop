@@ -8,7 +8,7 @@ jasonfile ="[{\"label\":\"Alastair Cook\"}]"
 
 parsedfile = JSON.parse(jasonfile)
 
-parsedfile
+
 
 usingComment = [{:name=>"MYOB", :body=>"Using Comment work!!"}]
 

@@ -1,4 +1,4 @@
-class Dashing.Comments extends Dashing.Widget
+class Dashing.Jobs extends Dashing.Widget
 
   @accessor 'quote', ->
     "“#{@get('current_comment')?.body}”"

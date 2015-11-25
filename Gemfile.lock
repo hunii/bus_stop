@@ -110,7 +110,7 @@ DEPENDENCIES
   dashing
   json
   nokogiri (>= 1.6.7.rc)
-  roo
+  roo (>= 2.1.0)
   twitter (>= 5.9.0)
 
 BUNDLED WITH
