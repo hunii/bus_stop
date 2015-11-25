@@ -12,7 +12,7 @@ config = File.read(config_file)
 configjson = [JSON.parse(config)]
 
 
-iterate = 0
+
 config_file = File.dirname(File.expand_path(__FILE__)) + '/../joblist.txt'
 config = File.read(config_file)
 list = config.split("/")
@@ -20,7 +20,7 @@ list = config.split("/")
 textstring = "Jamesstring"
 textstring2 = ["123234345", "0000", "333", "4444"]
 
-
+iterate = 0
 
 usingComment = [{:name=>"MYOB", :body=>"Using Comment work!!"}]
 
@@ -32,14 +32,12 @@ SCHEDULER.every '10s', :first_in => 0 do |job|
   send_event('test2', {items: configjson })
 
   if iterate != 2
-  	data = [{:label=>textstring, :value=> textstring2[n]}]
   	iterate += 1
   else
-  	data = [{:label=>textstring, :value=> textstring2[n]}]
   	iterate = 0
   end
- 
-   send_event('test1', {items: data })
+  data = [{:label=>textstring, :value=> list[iterate]}] 
+  send_event('test1', {items: data })
 
 
 
