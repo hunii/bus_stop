@@ -4,7 +4,17 @@ require 'json'
 
 
 openafile = File.open('trytextfile.txt')
-readafile = JSON.parse(openafile)
+
+openafile1 =[{
+  "label":"Mike",
+  "value":"Here" 
+}]
+
+
+
+
+
+readafile = JSON.parse(openafile1)
 
 newArray = []
 key = readafile.keys
@@ -13,6 +23,14 @@ key.each do |kkey|
 	array = Hash.new("label", kkey, "value", array_value)
 	newArray.push(array)
 end
+
+    persons = []
+    person_names = response.keys
+    person_names.each do |name|
+      person_status = response[name]
+      person = Hash.new("label", name, "value", person_status)
+      persons.push(person)
+    end
 
 # config_file = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile.txt'
 # config = File.open(config_file)
