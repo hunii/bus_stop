@@ -7,7 +7,7 @@ usingList1 = {:label=>"Developer", :value=>"30/10/2015"}, { :label=>"Tester", :v
 
 jasonfile ="{\"label\":\"Alastair Cooks\"}"
 
-parsedfile = JSON.parse(jasonfile)
+parsedfile = [JSON.parse(jasonfile)]
 #example  {"label"=>"Alastair Cook"}
 parsss = [{"label"=>"Alastair Cook"}]
 
@@ -29,7 +29,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
   send_event('testtest1', {comments: usingComment })
 
 	send_event('test1', {items: usingList1 })
-  send_event('test2', {items: parsss })
+  send_event('test2', {items: parsedfile })
 
 
 end
