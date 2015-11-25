@@ -30,7 +30,7 @@ openafile = File.open('trytextfile.txt')
 # config = File.open(config_file)
 # readafile1 = config.read
 
-select1 = readafile1["body"]
+select1 = 5
 
 
 SCHEDULER.every '1m', :first_in => 0 do |job|
