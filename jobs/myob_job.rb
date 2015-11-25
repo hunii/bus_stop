@@ -29,7 +29,8 @@ SCHEDULER.every '10s', :first_in => 0 do |job|
   send_event('myob_list', {items: usingList })
   send_event('testtest1', {comments: usingComment })
   
-
+  send_event('test2', {items: configjson })
+  
   if iterate != 2
   	iterate += 1
   else
@@ -39,7 +40,7 @@ SCHEDULER.every '10s', :first_in => 0 do |job|
    send_event('test1', {items: data })
 
 
-  send_event('test2', {items: configjson })
+
 
 
 end
