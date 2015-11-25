@@ -1,23 +1,5 @@
 {
    "label": "Alan Isaac",
-   "value": "David Richardson",
-  
-   "labelll": [
-      "Sachin Tendulkar",
-      "Virender Sehwag",
-      "Gautam Gambhir"
-   ],
-
-   "Srilanka": [
-      "Lasith Malinga",
-      "Angelo Mathews",
-      "Kumar Sangakkara"
-   ],
-
-   "England": [
-      "Alastair Cook",
-      "Jonathan Trott",
-      "Kevin Pietersen"
-   ]
+   "value": "David Richardson"
 	
 }
