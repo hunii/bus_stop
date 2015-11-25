@@ -28,7 +28,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
   send_event('testtest1', {comments: usingComment })
 
 	send_event('test1', {items: configjson })
-  send_event('test2', {items: parsedfile })
+  send_event('test2', {items: usingList })
 
 
 end
