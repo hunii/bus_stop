@@ -30,13 +30,15 @@ SCHEDULER.every '10s', :first_in => 0 do |job|
   send_event('testtest1', {comments: usingComment })
   
   send_event('test2', {items: configjson })
-  
+
   if iterate != 2
+  	data = [{:label=>textstring, :value=> list[n]}]
   	iterate += 1
   else
+  	data = [{:label=>textstring, :value=> list[n]}]
   	iterate = 0
   end
-   data = [{:label=>textstring, :value=> list[n]}]
+ 
    send_event('test1', {items: data })
 
 
@@ -44,15 +46,5 @@ SCHEDULER.every '10s', :first_in => 0 do |job|
 
 
 end
-
-
-
-
-
-
-
-
-
-
 
 
