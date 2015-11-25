@@ -6,16 +6,16 @@ require 'rubygems'
 
 openafile = File.open('trytextfile.txt')
 
-openafile1 =[{
-  "label":"Mike",
-  "value":"Here" 
-}]
+# openafile1 =[{
+#   "label":"Mike",
+#   "value":"Here" 
+# }]
 
 
 
 
 
-readafile = JSON.parse(openafile1)
+# readafile = JSON.parse(openafile)
 
 newArray = []
 key = readafile.keys
