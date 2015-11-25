@@ -1,5 +1,6 @@
 require 'json'
-
+require 'pp'
+require 'rubygems'
 
 
 
@@ -24,13 +25,6 @@ key.each do |kkey|
 	newArray.push(array)
 end
 
-    # persons = []
-    # person_names = response.keys
-    # person_names.each do |name|
-    #   person_status = response[name]
-    #   person = Hash.new("label", name, "value", person_status)
-    #   persons.push(person)
-    # end
 
 # config_file = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile.txt'
 # config = File.open(config_file)
