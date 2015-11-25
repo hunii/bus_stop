@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'roo', '>= 2.1.0'
 gem 'nokogiri', '>= 1.6.7.rc'
 gem 'json'
 gem 'dashing'

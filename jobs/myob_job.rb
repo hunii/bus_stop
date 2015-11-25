@@ -1,18 +1,8 @@
 require 'json'
 
-usingList = [{:label=>"Count", :value=>10}, { :label=>"Sort", :value=>30}]
+usingList = [{:label=>"Deveoper", :value=>"30/20/2015"}, { :label=>"Sort", :value=>30}]
 
 usingComment = [{:name=>"MYOB", :body=>"Using Comment work!!"}]
-
-
-data = [{firstName:"John", lastName:"Doe"},{firstName:"Anna", lastName:"Smith"},{firstName:"Peter",lastName: "Jones"}]
-datajson = data.to_json
-
-
-items = [{label: "l1", value: "v1"},{label: "l2", value: "v2"},{label: "l3", value: "v3"}]
-json_formatted_items = items.to_json
-# => "[{\"label\":\"l1\",\"value\":\"v1\"},{\"label\":\"l2\",\"value\":\"v2\"},{\"label\":\"l3\",\"value\":\"v3\"}]"
-
 
 
 
