@@ -12,15 +12,11 @@ config = File.read(config_file)
 configjson = [JSON.parse(config)]
 
 
-textstring = ["Jamesstring", "sam"]
+textstring = "Jamesstring"
 
-textstring2 = ["123234345", "00000"]
+textstring2 = "123234345"
 
-
-
-data = [{:label=>textstring[1], :value=> textstring2[1]}]
-
-
+data = [{:label=>textstring, :value=> textstring2}]
 
 
 
@@ -37,7 +33,7 @@ usingComment = [{:name=>"MYOB", :body=>"Using Comment work!!"}]
 
 
 
-SCHEDULER.every '1m', :first_in => 0 do |job|
+SCHEDULER.every '1m', :first_in => 0 do
 
   send_event('myob_list', {items: usingList1 })
   send_event('testtest1', {comments: usingComment })
