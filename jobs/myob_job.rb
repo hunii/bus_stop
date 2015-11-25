@@ -38,7 +38,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
   send_event('testtest1', {comments: usingComment })
 
 	send_event('test1', {items: h2 })
-  send_event('test2', {items: h })
+  send_event('test2', {items: configjson })
 
 
 end
