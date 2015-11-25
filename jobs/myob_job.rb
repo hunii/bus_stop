@@ -10,8 +10,8 @@ parsedfile = JSON.parse(jasonfile)
 #example  {"label"=>"Alastair Cook"}
 
 
-# config_file = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile.txt'
-config_file = 'trytextfile.txt'
+config_file = File.dirname(File.expand_path(__FILE__)) + '/trytextfile.txt'
+
 config = File.read(config_file)
 configjson = JSON.parse(config)
 
