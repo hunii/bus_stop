@@ -18,7 +18,7 @@ textstring2 = "123234345"
 
 data = [{:label=>textstring, :value=> textstring2}]
 
-data[:label] =textstring
+
 
 
 
