@@ -1,10 +1,8 @@
 require 'json'
 
 usingList = [{:label=>"Developer", :value=>"30/10/2015"}, { :label=>"Tester", :value=>"20/12/2015"}]
-usingList1 = {:label=>"Developer", :value=>"30/10/2015"}, { :label=>"Tester", :value=>"20/12/2015"}
 
 jasonfile ="{\"label\":\"Alastair Cooks\"}"
-
 parsedfile = [JSON.parse(jasonfile)]
 #example  {"label"=>"Alastair Cook"}
 
@@ -13,10 +11,14 @@ config_file = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile.txt'
 config = File.read(config_file)
 configjson = [JSON.parse(config)]
 
-textstring = "Jamesstring"
-textstring2 = "123234345"
 
-data = [{:label=>textstring, :value=> textstring2}]
+textstring = ["Jamesstring"]
+
+textstring2 = ["123234345"]
+
+
+
+data = [{:label=>textstring[0], :value=> textstring2[0]}]
 
 
 
@@ -35,7 +37,7 @@ usingComment = [{:name=>"MYOB", :body=>"Using Comment work!!"}]
 
 
 
-SCHEDULER.every '1m', :first_in => 0 do |job|
+SCHEDULER.every '2s', :first_in => 0 do |job|
 
   send_event('myob_list', {items: usingList1 })
   send_event('testtest1', {comments: usingComment })
