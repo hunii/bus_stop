@@ -1,6 +1,6 @@
 {
-   label: ["Alan Isaac\n", "Joe Blogs"],
-   value: ["10 years old\n", "Ancient"]
+   "label": "Alan Isaac\n", "Joe Blogs",
+   "value": "10 years old\n", "Ancient"
 
 
 }
