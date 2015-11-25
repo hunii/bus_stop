@@ -2,7 +2,7 @@
    "President": "Alan Isaac",
    "CEO": "David Richardson",
   
-   "India": [
+   "label": [
       "Sachin Tendulkar",
       "Virender Sehwag",
       "Gautam Gambhir"
