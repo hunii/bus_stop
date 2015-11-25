@@ -5,7 +5,7 @@ usingList = [{:label=>"Developer", :value=>"30/10/2015"}, { :label=>"Tester", :v
 usingList1 = {:label=>"Developer", :value=>"30/10/2015"}, { :label=>"Tester", :value=>"20/12/2015"}
 
 
-jasonfile ="[{\"label\":\"Alastair Cook\"}]"
+jasonfile ="{\"label\":\"Alastair Cook\"}"
 parsedfile = JSON.parse(jasonfile)
 #example  {"label"=>"Alastair Cook"}
 
