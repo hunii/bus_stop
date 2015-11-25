@@ -15,9 +15,9 @@ config_file = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile.txt'
 config = File.read(config_file)
 configjson = [JSON.parse(config)]
 
-config_file1 = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile1.txt'
-config1 = File.read(config_file1)
-configjson1 = [JSON.parse(config1)]
+# config_file1 = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile1.txt'
+# config1 = File.read(config_file1)
+# configjson1 = [JSON.parse(config1)]
 
 
 # array =[configjson, configjson1]
