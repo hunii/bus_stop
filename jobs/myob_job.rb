@@ -15,6 +15,9 @@ config_file = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile.txt'
 config = File.read(config_file)
 configjson = [JSON.parse(config)]
 
+h = Hash["a" => 100, "b" => 200]
+hashed = h.keys
+
 # config_file1 = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile1.txt'
 # config1 = File.read(config_file1)
 # configjson1 = [JSON.parse(config1)]
@@ -34,7 +37,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
   send_event('testtest1', {comments: usingComment })
 
 	send_event('test1', {items: configjson })
-  send_event('test2', {items: parsedfile })
+  send_event('test2', {items: h })
 
 
 end
