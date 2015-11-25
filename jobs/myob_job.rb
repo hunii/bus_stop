@@ -16,7 +16,10 @@ configjson = [JSON.parse(config)]
 textstring = "Jamesstring"
 textstring2 = "123234345"
 
-data = {:label=>textstring, :value=> textstring2}
+data = [{:label=>textstring, :value=> textstring2}]
+
+data[:label] =textstring
+
 
 
 # config_file1 = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile1.txt'
