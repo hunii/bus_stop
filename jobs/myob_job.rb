@@ -14,9 +14,9 @@ configjson = [JSON.parse(config)]
 
 textstring = "Jamesstring"
 
-textstring2 = "123234345"
+textstring2 = ["123234345", "0000"]
 
-data = [{:label=>textstring, :value=> textstring2}]
+data = [{:label=>textstring, :value=> textstring2[1]}]
 
 
 
