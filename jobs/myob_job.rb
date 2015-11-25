@@ -9,7 +9,7 @@ jasonfile ="{\"label\":\"Alastair Cooks\"}"
 
 parsedfile = JSON.parse(jasonfile)
 #example  {"label"=>"Alastair Cook"}
-parsss = {"label"=>"Alastair Cook"}
+parsss = [{"label"=>"Alastair Cook"}]
 
 config_file = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile.txt'
 
