@@ -13,7 +13,7 @@ parsedfile = [JSON.parse(jasonfile)]
 
 config_file = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile.txt'
 config = File.read(config_file)
-configjson = [config]
+configjson = [JSON.parse(config)]
 
 
 
