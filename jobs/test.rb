@@ -17,13 +17,13 @@ openafile = File.open('trytextfile.txt')
 
 # readafile = JSON.parse(openafile)
 
-newArray = []
-key = readafile.keys
-key.each do |kkey|
-	array_value = readafile[kkey]
-	array = Hash.new("label", kkey, "value", array_value)
-	newArray.push(array)
-end
+# newArray = []
+# key = readafile.keys
+# key.each do |kkey|
+# 	array_value = readafile[kkey]
+# 	array = Hash.new("label", kkey, "value", array_value)
+# 	newArray.push(array)
+# end
 
 
 # config_file = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile.txt'
