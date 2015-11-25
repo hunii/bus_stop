@@ -15,7 +15,7 @@ config_file = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile.txt'
 config = File.read(config_file)
 configjson = [JSON.parse(config)]
 
-h = Hash["a" => 100, "b" => 200]
+h = Hash["label" => 100, "value" => 200]
 hashed = h.keys
 
 # config_file1 = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile1.txt'
