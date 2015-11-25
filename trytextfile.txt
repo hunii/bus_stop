@@ -1,8 +1,8 @@
 {
-   "President": "Alan Isaac",
-   "CEO": "David Richardson",
+   "label": "Alan Isaac",
+   "value": "David Richardson",
   
-   "label": [
+   "labelll": [
       "Sachin Tendulkar",
       "Virender Sehwag",
       "Gautam Gambhir"
