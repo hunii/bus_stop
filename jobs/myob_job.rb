@@ -32,10 +32,10 @@ SCHEDULER.every '10s', :first_in => 0 do |job|
   send_event('test2', {items: configjson })
 
   if iterate != 2
-  	data = [{:label=>textstring, :value=> list[n]}]
+  	data = [{:label=>textstring, :value=> textstring2[n]}]
   	iterate += 1
   else
-  	data = [{:label=>textstring, :value=> list[n]}]
+  	data = [{:label=>textstring, :value=> textstring2[n]}]
   	iterate = 0
   end
  
