@@ -15,7 +15,7 @@ config_file = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile.txt'
 config = File.read(config_file)
 configjson = [JSON.parse(config)]
 
-h = '{:label=>"james", :value=>"home"}'
+h = "{:label=>\"james\", :value=>\"home\"}"
 h2 = (eval(h))
 h1 = {label:"james", value:"home", label:"jameslabel2"}
 
