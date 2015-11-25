@@ -9,12 +9,12 @@ jasonfile ="{\"label\":\"Alastair Cooks\"}"
 
 parsedfile = [JSON.parse(jasonfile)]
 #example  {"label"=>"Alastair Cook"}
-parsss = [{"label"=>"Alastair Cook"}]
+
 
 config_file = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile.txt'
 
 config = File.read(config_file)
-configjson = JSON.parse(config)
+configjson = [JSON.parse(config)]
 
 
 
@@ -28,7 +28,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
   send_event('myob_list', {items: usingList })
   send_event('testtest1', {comments: usingComment })
 
-	send_event('test1', {items: usingList1 })
+	send_event('test1', {items: configjson })
   send_event('test2', {items: parsedfile })
 
 
