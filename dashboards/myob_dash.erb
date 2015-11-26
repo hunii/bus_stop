@@ -17,6 +17,7 @@ $(function() {
   js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5&appId=502337339937592";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript" src="path/to/instafeed.min.js"></script>
 <script type="text/javascript" width="590px" height="360px">
     var feed = new Instafeed({
         get: 'tagged',
@@ -39,7 +40,7 @@ $(function() {
     <html>
       <body>
         <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-        <div id="player" style="position:relative top: 690px; left: 0px;"></div>
+        <div id="player" style="position:relative bottom: 0px; left: 0px;"></div>
 
         <script>
           var tag = document.createElement('script');
