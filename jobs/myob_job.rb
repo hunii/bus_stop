@@ -1,53 +1,56 @@
 require 'json'
 require 'open-uri'
 
-webpage = open('http://fsr.cvmail.com.au/myob/main.cfm?page=jobBoard&fo=1&groupType_7=&groupType_8=7173&groupType_8=7174&groupType_8=7414&groupType_11=&filter')
-html = webpage.read
-newHTML = ""
+# Job list for NZ ONLY
+def webToList(url)
 
-for char in html.split("")
-  if char == ">" or char == "="
-      newChar = "<"
-  elsif char == "\n" or char == "\r" or char == "\t"
-  newChar = ""
-  else
-    newChar = char
-  end
-  newHTML += newChar
+	webpage = open(url)
+	html = webpage.read
+	newHTML = ""
 
-end
-htmlList = newHTML.split("<")
-jobList = []
-for item in htmlList
-	if item == "\"jobMoreDetailCaptionStyle\""
-		jobList.push(htmlList[(htmlList.find_index(item))+1])
-		htmlList.delete_at(htmlList.find_index(item))
+	for char in html.split("")
+	  if char == ">" or char == "=" or char == "-"
+	      newChar = "<"
+	  elsif char == "\n" or char == "\r" or char == "\t"
+	  newChar = ""
+	  else
+	    newChar = char
+	  end
+	  newHTML += newChar
+
 	end
+	htmlList = newHTML.split("<")
+	jobList = []
+	for item in htmlList
+		if item == "\"jobMoreDetailCaptionStyle\""
+			jobList.push(htmlList[(htmlList.find_index(item))+1])
+			htmlList.delete_at(htmlList.find_index(item))
+		end
+	end
+	return jobList
 end
 
+jobListNZ = webToList("http://fsr.cvmail.com.au/myob/main.cfm?page=jobBoard&fo=1&groupType_7=&groupType_8=7173&groupType_8=7174&groupType_8=7414&groupType_11=&filter")
+jobListAU = webToList("http://fsr.cvmail.com.au/myob/main.cfm?page=jobBoard&fo=1&groupType_7=&groupType_8=7172&groupType_8=7170&groupType_8=7175&groupType_8=7168&groupType_8=7171&groupType_8=7169&groupType_11=&filter")
 
-
-config_file = File.dirname(File.expand_path(__FILE__)) + '/../joblist.txt'
-config = File.read(config_file)
-list = config.split("/")
-
-textstring = "Jamesstring"
-textstring2 = ["123234345", "0000", "333", "4444"]
-
-iterate = -1
-
-
-
+iterateNZ = -1
+iterateAU = -1
 SCHEDULER.every '10s', :first_in => 0 do |job|
 
-  if iterate != jobList.count
-  	iterate += 1
+  if iterateNZ != jobListNZ.count
+  	iterateNZ += 1
   else
-  	iterate = 0
+  	iterateNZ = 0
   end
-  data = [{:label=>textstring, :value=> jobList[iterate]}] 
-  send_event('test1', {items: data })
-
+  if iterateAU != jobListAU.count
+  	iterateAU += 1
+  else
+  	iterateAU = 0
+  end
+  dataNZ = [{:label=>"Available MYOB Position in NZ", :value=> jobListNZ[iterateNZ]}] 
+  dataAU = [{:label=>"Available MYOB Position in NZ", :value=> jobListAU[iterateAU]}] 
+  send_event('job_list_NZ', {items: dataNZ })
+  send_event('job_list_AU', {items: dataAU })
 
 
 end
