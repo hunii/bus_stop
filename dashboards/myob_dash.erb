@@ -34,82 +34,107 @@ $(function() {
 
 <div class="gridster">
   <ul>
-    <li data-row="7" data-col="1" data-sizex="1" data-sizey="1" style='background-color:#fff;'>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1" style='background-color:#fff;'>
       <div style='background-color:#fff;' data-view="Image" data-image="/logo.png"></div>
     </li>
 
-      <!DOCTYPE html>
-      <html>
-        <body>
-          <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-          <div id="player" style="position: top: 0px" style="position: relative; left: 0px;"></div>
+    <!DOCTYPE html>
+    <html>
+      <body>
+        <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+        <div id="player"></div>
 
-          <script>
-            var tag = document.createElement('script');
-  
-            tag.src = "https://www.youtube.com/iframe_api";
-            var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  
-            var player;
-            function onYouTubeIframeAPIReady() {
-              player = new YT.Player('player', {
-                height: '360',
-                width: '590',
-                videoId: 'drDTOPxCGFQ',
-                events: {
-                  'onReady': onPlayerReady,
-                  'onStateChange': onPlayerStateChange
-                }
-              });
-            }
+        <script>
+          var tag = document.createElement('script');
 
-        function onPlayerReady(event) {
-          event.target.playVideo();
-        }
+          tag.src = "https://www.youtube.com/iframe_api";
+          var firstScriptTag = document.getElementsByTagName('script')[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-        var done = false;
-        function onPlayerStateChange(event) {
-          if (event.data == YT.PlayerState.PLAYING && !done) {
-            setTimeout(stopVideo, 600000);
-            done = true;
+          var player;
+          function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+              height: '390',
+              width: '640',
+              videoId: 'M7lc1UVf-VE',
+              events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+              }
+            });
           }
-        }
-        function stopVideo() {
-          player.stopVideo();
-        }
-      </script>
-    </body>
-  </html>
 
-    <li data-row="6" data-col="2" data-sizex="1" data-sizey="1">
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+    </script>
+  </body>
+</html>
+
+    <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
       <div data-view="Clock"></div>
       <i class="icon-time icon-background"></i>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+    <li data-row="1" data-col="3" data-sizex="2" data-sizey="1">
       <div data-id="twitter_mentions" data-view="Comments" style="font-size:30px" style="background-color:#ff9618;" data-moreinfo="Tweets from MYOB"></div>
       <i class="icon-twitter icon-background"></i>
     </li>
 
 
+    <li data-row="2" data-col="1" data-sizex="1" data-sizey="2">
+      <div data-id="something" data-view="Text" data-title="some other text"></div>
+    </li>
 
-    <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
+
+    <li data-row="2" data-col="2" data-sizex="2" data-sizey="1">
       <div data-id="job_list_NZ" data-view="List" data-unordered="true" data-title="Current Jobs" data-moreinfo="where do you want to work today?"></div>
     </li>
 
-  <div class="fb-page" data-href="https://www.facebook.com/MYOB/" style ="position:relative; top: 0px; left: 600px;" data-width="590" data-height="360" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
-  <div class="fb-xfbml-parse-ignore">
-  <blockquote cite="https://www.facebook.com/MYOB/"><a href="https://www.facebook.com/MYOB/">MYOB</a></blockquote></div></div>
+
+    <li data-row="2" data-col="3" data-sizex="1" data-sizey="2">
+      <div data-id="welcome" data-view="Text" data-title="What's cool?" data-text="Put the most interesting thing happening here!" data-moreinfo="yay, more text..."></div>
+    </li>
+
+
 
   
 
-    <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
+    <li data-row="3" data-col="2" data-sizex="2" data-sizey="1">
       <div data-id="job_list_AU" data-view="List" data-unordered="true" data-moreinfo="yay, more text..."></div>
     </li>
+
+    <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="test2" data-view="List"  data-moreinfo="yay, more text..."></div>
+    </li>
+
 
   </ul>
 
   <span data-id="youtube" data-view="Youtube" data-title="youtube" style="padding: 0px"></span>
 
 </div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5&appId=502337339937592";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+  <div class="fb-page" data-href="https://www.facebook.com/MYOB/" style ="position:relative; top: 0px; left: 600px;" data-width="590" data-height="360" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
+  <div class="fb-xfbml-parse-ignore">
+  <blockquote cite="https://www.facebook.com/MYOB/"><a href="https://www.facebook.com/MYOB/">MYOB</a></blockquote></div></div>
