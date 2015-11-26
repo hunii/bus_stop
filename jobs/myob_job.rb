@@ -51,17 +51,17 @@ def arrayOfList(jobList, dateList, locList)
   for item in 0..(jobList.count-1)
     if jobList.count%2 == 0
       if iterate <= jobList.count-1
-        data = [{:label=> jobList[iterate], :value=> (dateList[iterate].to_s+locList[iterate].to_s)}]
+        data = {:label=> jobList[iterate], :value=> (dateList[iterate].to_s+locList[iterate].to_s)}
         iterate+=1
         arrayOf.push(data)
       end
     else
       if iterate != jobList.count-1
-        data = [{:label=> jobList[iterate], :value=> dateList[iterate].to_s+locList[iterate].to_s}]
+        data = {:label=> jobList[iterate], :value=> dateList[iterate].to_s+locList[iterate].to_s}
         iterate+=1
         arrayOf.push(data)
       else
-        data = [{:label=> jobList[iterate], :value=> dateList[iterate].to_s+locList[iterate].to_s}]
+        data = {:label=> jobList[iterate], :value=> dateList[iterate].to_s+locList[iterate].to_s}
         arrayOf.push(data)
       end
     end
