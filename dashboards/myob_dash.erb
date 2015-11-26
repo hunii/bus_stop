@@ -58,7 +58,8 @@ $(function() {
             player = new YT.Player('player', {
               height: '670',
               width: '690',
-              playerVars: { 'autoplay':1, 'controls':0, list: 'https://www.youtube.com/playlist?list=PL148kCvXk8pC_OwpnspHi5USfgx5a9lPE', listType: 'playlist'},
+              videoId: 'drDTOPxCGFQ',
+              playerVars: { 'autoplay':1, 'controls':0, loop:1},
               events: {
                 'onReady': onPlayerReady,
                 'onStateChange': onPlayerStateChange
