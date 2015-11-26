@@ -48,7 +48,7 @@ SCHEDULER.every '10s', :first_in => 0 do |job|
   	iterateAU = 0
   end
   dataNZ = [{:label=>"Available MYOB Position in NZ", :value=> jobListNZ[iterateNZ]}] 
-  dataAU = [{:label=>"Available MYOB Position in NZ", :value=> jobListAU[iterateAU]}] 
+  dataAU = [{:label=>"Available MYOB Position in AU", :value=> jobListAU[iterateAU]}] 
   send_event('job_list_NZ', {items: dataNZ })
   send_event('job_list_AU', {items: dataAU })
 
