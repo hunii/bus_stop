@@ -1,7 +1,7 @@
 <script type='text/javascript'>
 $(function() {
   // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
-  // Dashing.gridsterLayout('[{"col":1,"row":2},{"col":5,"row":1},{"col":4,"row":2},{"col":2,"row":3}]')
+  // Dashing.gridsterLayout('[{"col":2,"row":1},{"col":1,"row":1},{"col":3,"row":1},{"col":2,"row":2},{"col":3,"row":2},{"col":1,"row":2},{"col":5,"row":1},{"col":4,"row":2},{"col":2,"row":3}]')
   Dashing.widget_base_dimensions = [370, 340]
   Dashing.numColumns = 6
 });
@@ -11,7 +11,7 @@ $(function() {
 
 <div class="gridster">
   <ul>
-    <li data-row="5" data-col="5" data-sizex="1" data-sizey="1" style='background-color:#fff;'>
+    <li data-row="7" data-col="5" data-sizex="1" data-sizey="1" style='background-color:#fff;'>
       <div style='background-color:#fff;' data-view="Image" data-image="/logo.png"></div>
     </li>
 
@@ -31,8 +31,8 @@ $(function() {
           var player;
           function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
-              height: '780',
-              width: '1280',
+              height: '390',
+              width: '640',
               videoId: 'M7lc1UVf-VE',
               events: {
                 'onReady': onPlayerReady,
@@ -59,7 +59,7 @@ $(function() {
   </body>
 </html>
 
-    <li data-row="5" data-col="6" data-sizex="1" data-sizey="1">
+    <li data-row="6" data-col="6" data-sizex="1" data-sizey="1">
       <div data-view="Clock"></div>
       <i class="icon-time icon-background"></i>
     </li>
@@ -92,10 +92,10 @@ $(function() {
       <div data-id="job_list_AU" data-view="List" data-unordered="true" data-moreinfo="yay, more text..."></div>
     </li>
 
-
-    <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+    <li data-row="6" data-col="5" data-sizex="1" data-sizey="1">
       <div data-id="test2" data-view="List"  data-moreinfo="yay, more text..."></div>
     </li>
+
 
   </ul>
 
