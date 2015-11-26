@@ -36,20 +36,20 @@ def arrayOfList(jobList)
   iterate = 0
 
   arrayOf=[]
-  for item in 0..(((jobList.count-1)/2))
+  for item in 0..(jobList.count-1)
     if jobList.count%2 == 0
       if iterate <= jobList.count-1
-        data = {:label=> jobList[iterate], :value=> jobList[iterate+=1]}
+        data = {:label=> "", :value=> jobList[iterate]}
         iterate+=1
         arrayOf.push(data)
       end
     else
       if iterate != jobList.count-1
-        data = {:label=> jobList[iterate], :value=> jobList[iterate+=1]}
+        data = {:label=> "", :value=> jobList[iterate]}
         iterate+=1
         arrayOf.push(data)
       else
-        data = {:label=> jobList[iterate], :value=> ""}
+        data = {:label=> "", :value=> jobList[iterate]}
         arrayOf.push(data)
       end
     end
