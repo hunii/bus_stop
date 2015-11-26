@@ -2,6 +2,7 @@
 $(function() {
   // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
   // Dashing.gridsterLayout('[{"col":2,"row":1},{"col":1,"row":1},{"col":3,"row":1},{"col":2,"row":2},{"col":3,"row":2},{"col":1,"row":2},{"col":5,"row":1},{"col":4,"row":2},{"col":2,"row":3}]')
+  // <div id="instafeed" style ="position:relative; top: 0px; left: 0px;" data-width="590" data-height="360"></div>
   Dashing.widget_base_dimensions = [370, 340]
   Dashing.numColumns = 6
 });
@@ -28,9 +29,6 @@ $(function() {
 
 
 
-//<div id="instafeed" style ="position:relative; top: 0px; left: 0px;" data-width="590" data-height="360"></div>
-
-
 
 <div class="gridster">
   <ul>
@@ -42,7 +40,7 @@ $(function() {
     <html>
       <body>
         <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-        <div id="player"></div>
+        <div id="player" style="position:relative bottom: 0px; left: 0px></div>
 
         <script>
           var tag = document.createElement('script');
@@ -54,8 +52,8 @@ $(function() {
           var player;
           function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
-              height: '390',
-              width: '640',
+              height: '390px',
+              width: '640px',
               videoId: 'M7lc1UVf-VE',
               events: {
                 'onReady': onPlayerReady,
@@ -127,16 +125,3 @@ $(function() {
   <span data-id="youtube" data-view="Youtube" data-title="youtube" style="padding: 0px"></span>
 
 </div>
-
-//<div id="fb-root"></div>
-//<script>(function(d, s, id) {
-  //var js, fjs = d.getElementsByTagName(s)[0];
-  //if (d.getElementById(id)) return;
-  //js = d.createElement(s); js.id = id;
-  //js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5&appId=502337339937592";
-  //fjs.parentNode.insertBefore(js, fjs);
-//}(document, 'script', 'facebook-jssdk'));</script>
-
-  //<div class="fb-page" data-href="https://www.facebook.com/MYOB/" style ="position:relative; top: 0px; left: 600px;" data-width="590" data-height="360" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
-  //<div class="fb-xfbml-parse-ignore">
-  //<blockquote cite="https://www.facebook.com/MYOB/"><a href="https://www.facebook.com/MYOB/">MYOB</a></blockquote></div></div>
