@@ -44,7 +44,7 @@ SCHEDULER.every '10s', :first_in => 0 do |job|
   else
   	iterate = 0
   end
-  data = [{:label=>textstring, :value=> jobList[0]}] 
+  data = [{:label=>textstring, :value=> jobList[iterate]}] 
   send_event('test1', {items: data })
 
 
