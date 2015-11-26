@@ -21,6 +21,7 @@ jobList = []
 for item in htmlList
 	if item == "\"jobMoreDetailCaptionStyle\""
 		jobList.push(htmlList[(htmlList.find_index(item))+1])
+		htmlList.delete_at(htmlList.find_index(item))
 	end
 end
 
