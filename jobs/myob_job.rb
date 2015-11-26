@@ -1,15 +1,28 @@
 require 'json'
+require 'open-uri'
 
-usingList = [{:label=>"Developer", :value=>"30/10/2015"}, { :label=>"Tester", :value=>"20/12/2015"}]
+webpage = open('http://fsr.cvmail.com.au/myob/main.cfm?page=jobBoard&fo=1&groupType_7=&groupType_8=7173&groupType_8=7174&groupType_8=7414&groupType_11=&filter')
+html = webpage.read
+newHTML = ""
 
-jasonfile ="{\"label\":\"Alastair Cooks\"}"
-parsedfile = [JSON.parse(jasonfile)]
-#example  {"label"=>"Alastair Cook"}
+for char in html.split("")
+  if char == ">" or char == "="
+      newChar = "<"
+  elsif char == "\n" or char == "\r" or char == "\t"
+  newChar = ""
+  else
+    newChar = char
+  end
+  newHTML += newChar
 
-
-config_file = File.dirname(File.expand_path(__FILE__)) + '/../trytextfile.txt'
-config = File.read(config_file)
-configjson = [JSON.parse(config)]
+end
+htmlList = newHTML.split("<")
+jobList = []
+for item in htmlList
+	if item == "\"jobMoreDetailCaptionStyle\""
+		jobList.push(htmlList[(htmlList.find_index(item))+1])
+	end
+end
 
 
 
@@ -20,26 +33,22 @@ list = config.split("/")
 textstring = "Jamesstring"
 textstring2 = ["123234345", "0000", "333", "4444"]
 
-iterate = 0
+iterate = -1
 
-usingComment = [{:name=>"MYOB", :body=>"Using Comment work!!"}]
+
 
 SCHEDULER.every '10s', :first_in => 0 do |job|
 
-  send_event('myob_list', {items: usingList })
-  send_event('testtest1', {comments: usingComment })
-  
+
   send_event('test2', {items: configjson })
 
-  if iterate != 2
+  if iterate != jobList.count
   	iterate += 1
   else
   	iterate = 0
   end
-  data = [{:label=>textstring, :value=> list[iterate]}] 
+  data = [{:label=>textstring, :value=> jobList[iterate]}] 
   send_event('test1', {items: data })
-
-
 
 
 
