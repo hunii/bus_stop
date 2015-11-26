@@ -17,10 +17,21 @@ $(function() {
   js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5&appId=502337339937592";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript">
+    var feed = new Instafeed({
+        get: 'tagged',
+        tagName: 'awesome',
+        clientId: 'YOUR_CLIENT_ID'
+    });
+    feed.run();
+</script>
+
 
 <div class="fb-page" data-href="https://www.facebook.com/MYOB/" style ="position:relative; top: 0px; left: 0px;" data-width="590" data-height="360" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
 <div class="fb-xfbml-parse-ignore">
 <blockquote cite="https://www.facebook.com/MYOB/"><a href="https://www.facebook.com/MYOB/">MYOB</a></blockquote></div></div>
+
+<div id="instafeed" style ="position:relative; top: 0px; left: 0px;" data-width="590" data-height="360"></div>
 
 <!DOCTYPE html>
     <html>
