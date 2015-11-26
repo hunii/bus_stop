@@ -30,27 +30,44 @@ def webToList(url)
 	return jobList
 end
 
-jobListNZ = webToList("http://fsr.cvmail.com.au/myob/main.cfm?page=jobBoard&fo=1&groupType_7=&groupType_8=7173&groupType_8=7174&groupType_8=7414&groupType_11=&filter")
-jobListAU = webToList("http://fsr.cvmail.com.au/myob/main.cfm?page=jobBoard&fo=1&groupType_7=&groupType_8=7172&groupType_8=7170&groupType_8=7175&groupType_8=7168&groupType_8=7171&groupType_8=7169&groupType_11=&filter")
 
-iterateNZ = -1
-iterateAU = -1
-SCHEDULER.every '10s', :first_in => 0 do |job|
 
-  if iterateNZ != jobListNZ.count
-  	iterateNZ += 1
-  else
-  	iterateNZ = 0
+def arrayOfList(jobList)
+  iterate = 0
+
+  arrayOf=[]
+  for item in 0..(((jobList.count-1)/2))
+    if jobList.count%2 == 0
+      if iterate <= jobList.count-1
+        data = {:label=> jobList[iterate], :value=> jobList[iterate+=1]}
+        iterate+=1
+        arrayOf.push(data)
+      end
+    else
+      if iterate != jobList.count-1
+        data = {:label=> jobList[iterate], :value=> jobList[iterate+=1]}
+        iterate+=1
+        arrayOf.push(data)
+      else
+        data = {:label=> jobList[iterate], :value=> ""}
+        arrayOf.push(data)
+      end
+    end
   end
-  if iterateAU != jobListAU.count
-  	iterateAU += 1
-  else
-  	iterateAU = 0
-  end
-  dataNZ = [{:label=>"Available MYOB Position in NZ", :value=> jobListNZ[iterateNZ]}] 
-  dataAU = [{:label=>"Available MYOB Position in AU", :value=> jobListAU[iterateAU]}] 
-  send_event('job_list_NZ', {items: dataNZ })
-  send_event('job_list_AU', {items: dataAU })
+  return arrayOf
+end
+
+
+SCHEDULER.every '12h', :first_in => 0 do |job|
+
+	jobListNZ = webToList("http://fsr.cvmail.com.au/myob/main.cfm?page=jobBoard&fo=1&groupType_7=&groupType_8=7173&groupType_8=7174&groupType_8=7414&groupType_11=&filter")
+	jobListAU = webToList("http://fsr.cvmail.com.au/myob/main.cfm?page=jobBoard&fo=1&groupType_7=&groupType_8=7172&groupType_8=7170&groupType_8=7175&groupType_8=7168&groupType_8=7171&groupType_8=7169&groupType_11=&filter")
+
+	NZList = arrayOfList(jobListNZ)
+	AUList = arrayOfList(jobListAU)
+
+	send_event('job_list_NZ', {items: NZList })
+	send_event('job_list_AU', {items: AUList })
 
 
 end
