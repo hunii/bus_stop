@@ -17,21 +17,17 @@ $(function() {
   js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5&appId=502337339937592";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-  <script type="text/javascript" src="https://assets.yammer.com/assets/platform_embed.js"></script>
-  <script type="text/javascript"> 
-  yam.connect.embedFeed({
-    "network": "MYOB.com",
-    "config": {
-      "use_sso": false,
-      "header": true,
-      "footer": false,
-      "showOpenGraphPreview": false,
-      "defaultToCanonical": false,
-      "hideNetworkName": false
-    },
-    "container": "#embedded-feed"
-  });
-  </script>
+
+
+<div id="embedded-feed" style="height:800px;width:400px;"></div>
+<script type="text/javascript" src="https://assets.yammer.com/assets/platform_embed.js"></script>
+<script type="text/javascript"> yam.connect.embedFeed({
+  container: "#embedded-feed",
+  network: "myob.com",
+  feedType: "group",
+  feedId: "4456337"});
+</script>
+
 
 <div class="gridster">
   <ul>
