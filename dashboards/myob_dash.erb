@@ -72,10 +72,20 @@ $(function() {
   <iframe id="ytplayer" type="text/html" width="720" height="680" style ="position:relative; top: -1100px; left: 450px;"
   src="https://www.youtube.com/embed/?listType=playlist&list=PLyNexh_9F_-MZRzeWWl-er3ris6_Z3MFE&autoplay=1&loop=1"
   frameborder="0" allowfullscreen>
-  <div id="embedded-feed" style="height:800px;width:400px;"></div>
+  
   <script type="text/javascript" src="https://assets.yammer.com/assets/platform_embed.js"></script>
-  <script type="text/javascript"> yam.connect.embedFeed({
-	  container: "#embedded-feed",
-          network: "myob.com"
-    });
+  <div id="embedded-feed" style="height:800px;width:400px;"></div>
+  <script type="text/javascript"> 
+  yam.connect.embedFeed({
+    "network": "MYOB.com",
+    "config": {
+      "use_sso": false,
+      "header": true,
+      "footer": false,
+      "showOpenGraphPreview": false,
+      "defaultToCanonical": false,
+      "hideNetworkName": false
+    },
+    "container": "#embedded-feed"
+  });
   </script>
