@@ -19,14 +19,6 @@ $(function() {
 }(document, 'script', 'facebook-jssdk'));</script>
 
 
-<div id="embedded-feed" style="height:800px;width:400px;"></div>
-<script type="text/javascript" src="https://assets.yammer.com/assets/platform_embed.js"></script>
-<script type="text/javascript"> yam.connect.embedFeed({
-  container: "#embedded-feed",
-  network: "myob.com",
-  feedType: "group",
-  feedId: "4456337"});
-</script>
 
 
 <div class="gridster">
@@ -72,5 +64,11 @@ $(function() {
   src="https://www.youtube.com/embed/?listType=playlist&list=PLyNexh_9F_-MZRzeWWl-er3ris6_Z3MFE&autoplay=1&loop=1"
   frameborder="0" allowfullscreen>
  
-  <div id="embedded-feed" style ="position:relative; top: -1100px; left: 450px;"></div>
-  
+  <div id="embedded-feed" style="height:800px;width:400px; position:relative; top: -1100px; left: 450px;"></div>
+<script type="text/javascript" src="https://assets.yammer.com/assets/platform_embed.js"></script>
+<script type="text/javascript"> yam.connect.embedFeed({
+  container: "#embedded-feed",
+  network: "myob.com",
+  feedType: "group",
+  feedId: "4456337"});
+</script>
