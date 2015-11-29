@@ -73,18 +73,12 @@ $(function() {
   src="https://www.youtube.com/embed/?listType=playlist&list=PLyNexh_9F_-MZRzeWWl-er3ris6_Z3MFE&autoplay=1&loop=1"
   frameborder="0" allowfullscreen>
 
-  <!DOCTYPE HTML>
-  <html>
-  <head></head>
-  <body>
-      <script type="text/javascript" src="https://c64.assets-yammer.com/assets/platform_embed.js"></script>
-      <div id="embedded-feed" style="height:400px;width:500px;"></div> 
-      <script>
-          yam.connect.embedFeed(
-            { container: '#embedded-feed',
-              network: 'MYOB.com',
-	      feedId: '4456337'
-          });
-      </script>
-  </body>
-  </html>
+  <script type="text/javascript" src="https://c64.assets-yammer.com/assets/platform_embed.js"></script>
+  <div id="embedded-feed" style="height:400px;width:500px;"></div> 
+  <script>
+      yam.connect.embedFeed(
+        { container: '#embedded-feed',
+          network: 'MYOB.com',
+	  feedId: '4456337'
+      });
+  </script>
